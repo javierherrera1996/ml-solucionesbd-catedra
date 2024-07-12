@@ -13,9 +13,9 @@ RUN pip install -r requirements.txt
 # Copiar los archivos de la aplicación
 COPY . .
 
-# Exponer el puerto para FastAPI
-EXPOSE 8080
+# Exponer el puerto para Streamlit
+EXPOSE 8502
 
-# Comando para ejecutar la aplicación FastAPI
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
-
+# Comando para ejecutar la aplicación Streamlit
+CMD ["streamlit", "run", "app.py", "--server.port=8502", "--server.address=0.0.0.0"]
+#streamlit run app.py --server.port=8502 --server.address=0.0.0.0
